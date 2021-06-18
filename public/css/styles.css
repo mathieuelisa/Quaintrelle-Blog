@@ -1,16 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   background-color: #b36331;
 }
 
-body {
-  background-color: #b36331;
+.main__container {
   color: whitesmoke;
 }
-
 .container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
 }
+
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -19,16 +24,24 @@ body {
   margin-bottom: 0;
   font-size: 12px;
   letter-spacing: 5px;
-  background-color: #b36331;
 }
 .navbar-nav li a:hover {
   color: lightblue !important;
   transition: 0.4s;
 }
 
+.title__article {
+  font-size: 2em;
+}
+
+.navbar__link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.8em;
+}
+
 .footer-padding {
   padding-bottom: 60px;
-  background-color: #b36331;
 }
 
 .footer {
