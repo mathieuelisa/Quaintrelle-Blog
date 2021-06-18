@@ -16,28 +16,42 @@ html {
   padding-bottom: 70px;
 }
 
-.navbar {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border: 0;
-  border-radius: 0;
-  margin-bottom: 0;
-  font-size: 12px;
-  letter-spacing: 5px;
+.border {
+  display: flex;
+  width: 85%;
+  border-bottom: 2px solid white;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 30px 0px 30px 0px;
 }
+
+.nav__title {
+  font-size: 1.2em;
+}
+
 .navbar-nav li a:hover {
   color: lightblue !important;
   transition: 0.4s;
 }
 
-.title__article {
-  font-size: 2em;
+.container {
+  padding: 50px 93px 0px 94px;
 }
 
 .navbar__link {
+  list-style: none;
+  display: inline-flex;
+}
+
+.navbar__links {
   text-decoration: none;
   color: inherit;
   font-size: 0.8em;
+  margin-right: 60px;
+}
+
+.navbar__links:hover {
+  color: red;
 }
 
 .footer-padding {
