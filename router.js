@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
-const homeStartingContent = "Welcome to my blog...";
 const aboutContent =
   "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque.";
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien.";
@@ -16,31 +15,30 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model("Post", postSchema);
 
-router.get("/", function (req, res) {
-  Post.find({}, function (err, posts) {
-    if (err) {
-      console.log(err);
+router.get("/", (req, res) => {
+  Post.find({}, (error, posts) => {
+    if (error) {
+      console.error(error);
     } else {
       res.render("home", {
-        startingContent: homeStartingContent,
         posts: posts,
       });
     }
   });
 });
 
-router.get("/about", function (req, res) {
+router.get("/about", (req, res) => {
   res.render("about", { aboutContent: aboutContent });
 });
 
-router.get("/contact", function (req, res) {
+router.get("/contact", (req, res) => {
   res.render("contact", { contactContent: contactContent });
 });
-router.get("/compose", function (req, res) {
+router.get("/compose", (req, res) => {
   res.render("compose");
 });
 
-router.post("/compose", function (req, res) {
+router.post("/compose", (req, res) => {
   const post = new Post({
     title: req.body.postTitle,
     content: req.body.postBody,
@@ -49,6 +47,17 @@ router.post("/compose", function (req, res) {
     if (!err) {
       res.redirect("/");
     }
+  });
+});
+
+router.get("/posts/:postId", (req, res) => {
+  const requestedPostId = req.params.postId;
+
+  Post.findOne({ _id: requestedPostId }, (err, post) => {
+    res.render("post", {
+      title: post.title,
+      content: post.content,
+    });
   });
 });
 
