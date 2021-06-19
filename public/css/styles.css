@@ -111,6 +111,25 @@ html {
   margin-bottom: 20px;
 }
 
+.form__control--title {
+  width: 30%;
+  height: 30px;
+  padding: 5px;
+  background-color: #b36331;
+  color: white;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+}
+
+.form__control--text {
+  width: 80%;
+  background-color: #b36331;
+  padding: 5px;
+  color: white;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+}
+
 .form__group--title,
 .form__group--text {
   display: block;
