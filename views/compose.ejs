@@ -1,16 +1,16 @@
 <%- include("partials/header") -%>
 
-    <h1>Compose</h1>
+    <h1 class="form__title">Compose</h1>
 
-    <form action="/compose" method="post">
+    <form class="form__container" action="/compose" method="post">
 
-        <div class="form-group">
-            <label for="title">Title</label>
+        <div class="form__group">
+            <label class="form__group--title" for="title">Title</label>
             <input class="form-control" type="text" id="title" name="postTitle">
         </div>
 
-        <div class="form-group">
-            <label for="post">Post</label>
+        <div class="form__group">
+            <label class="form__group--text" for="post">Post</label>
             <textarea class="form-control" id="post" rows="9" type="text" name="postBody"> </textarea>
         </div>
 

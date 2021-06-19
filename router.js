@@ -54,10 +54,13 @@ router.get("/posts/:postId", (req, res) => {
   const requestedPostId = req.params.postId;
 
   Post.findOne({ _id: requestedPostId }, (err, post) => {
-    res.render("post", {
-      title: post.title,
-      content: post.content,
-    });
+    if (err) console.log(err);
+    else {
+      res.render("post", {
+        title: post.title,
+        content: post.content,
+      });
+    }
   });
 });
 
